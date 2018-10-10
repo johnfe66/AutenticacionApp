@@ -26,6 +26,33 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.johnfe66.autenticacionapp.LoginActivity" />
         </activity>
+
+        <service android:name=".services.FCMToken">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_menu_camera" />
+        <!--
+             Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <activity
+            android:name=".PersonasActivity"
+            android:label="@string/title_activity_personas"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.johnfe66.autenticacionapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
